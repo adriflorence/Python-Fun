@@ -40,6 +40,7 @@ class Tree():
         
     def get_root(self):
         return self.root
+        
 
 # Define Queue Class #
 class Queue():
@@ -59,21 +60,24 @@ class Queue():
         return len(self.q)
 
 def breadth_first_search(tree):
-  # queue
   q = Queue()
-  # visit_order
   visit_order = list()
-  # start at root
   node = tree.get_root()
+  # add root to queue
+  q.enq(node)
   # while queue is not empty:
-    # dequeue the node
-
-    # visit that node
-
+  while len(q) > 0:
+    # dequeue and visit that node
+    node = q.deq()
+    visit_order.append(node)
     # add left child if exists
-
+    if node.has_left_child():
+      q.enq(node.get_left_child())
     # add right child if exists
-  pass
+    if node.has_right_child():
+      q.enq(node.get_right_child())
+
+  return visit_order
 
 
 # create a tree and add some nodes
@@ -82,4 +86,4 @@ tree.get_root().set_left_child(Node("banana"))
 tree.get_root().set_right_child(Node("cherry"))
 tree.get_root().get_left_child().set_left_child(Node("dates"))
 
-breadth_first_search(tree)
+print(breadth_first_search(tree))
