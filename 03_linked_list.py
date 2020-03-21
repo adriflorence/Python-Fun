@@ -98,9 +98,3 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.prepend(1)
 assert linked_list.to_list() == [1]
-print(linked_list.to_list())
-linked_list.append(3)
-print(linked_list.to_list())
-linked_list.prepend(2)
-print(linked_list.to_list())
-assert linked_list.to_list() == [2, 1, 3]
