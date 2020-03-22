@@ -12,9 +12,12 @@ class LinkedList:
           self.head = Node(value)
           return
       
-      new_head = Node(value)
-      self.head.next = self.head
-      self.head = new_head
+      tmp = self.head
+        
+      self.head = Node(value)
+      self.head.next = tmp
+      
+      return
 
   
   def append(self, value):
@@ -98,3 +101,24 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.prepend(1)
 assert linked_list.to_list() == [1]
+print(linked_list.to_list())
+linked_list.append(3)
+print(linked_list.to_list())
+linked_list.prepend(2)
+print(linked_list.to_list())
+assert linked_list.to_list() == [2, 1, 3]
+
+# Test append
+linked_list = LinkedList()
+linked_list.append(1)
+assert linked_list.to_list() == [1]
+linked_list.append(3)
+assert linked_list.to_list() == [1, 3]
+
+# # Test search
+# linked_list.prepend(2)
+# linked_list.prepend(1)
+# linked_list.append(4)
+# linked_list.append(3)
+# assert linked_list.search(1).value == 1
+# assert linked_list.search(4).value == 4
