@@ -78,12 +78,13 @@ class LinkedList:
       pass
   
   def size(self):
-      """ Return the size or length of the linked list. """
-      
-      
-      # TODO: Write function to get size here
-      
-      pass
+      size = 0
+      node = self.head
+      while node:
+        size += 1
+        node = node.next
+
+      return size
   
   def to_list(self):
       out = []
@@ -101,11 +102,8 @@ class LinkedList:
 linked_list = LinkedList()
 linked_list.prepend(1)
 assert linked_list.to_list() == [1]
-print(linked_list.to_list())
 linked_list.append(3)
-print(linked_list.to_list())
 linked_list.prepend(2)
-print(linked_list.to_list())
 assert linked_list.to_list() == [2, 1, 3]
 
 # Test append
@@ -115,10 +113,19 @@ assert linked_list.to_list() == [1]
 linked_list.append(3)
 assert linked_list.to_list() == [1, 3]
 
-# # Test search
-# linked_list.prepend(2)
-# linked_list.prepend(1)
-# linked_list.append(4)
-# linked_list.append(3)
-# assert linked_list.search(1).value == 1
-# assert linked_list.search(4).value == 4
+# Test search
+linked_list.prepend(2)
+linked_list.prepend(1)
+linked_list.append(4)
+linked_list.append(3)
+assert linked_list.search(1).value == 1
+assert linked_list.search(4).value == 4
+
+
+# Test remove
+linked_list.remove(1)
+assert linked_list.to_list() == [2, 1, 3, 4, 3]
+linked_list.remove(3)
+assert linked_list.to_list() == [2, 1, 4, 3]
+linked_list.remove(3)
+assert linked_list.to_list() == [2, 1, 4]
