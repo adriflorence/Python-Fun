@@ -121,7 +121,6 @@ linked_list.append(3)
 assert linked_list.search(1).value == 1
 assert linked_list.search(4).value == 4
 
-
 # Test remove
 linked_list.remove(1)
 assert linked_list.to_list() == [2, 1, 3, 4, 3]
@@ -129,3 +128,8 @@ linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4, 3]
 linked_list.remove(3)
 assert linked_list.to_list() == [2, 1, 4]
+
+# Test pop
+value = linked_list.pop()
+assert value == 2
+assert linked_list.head.value == 1
