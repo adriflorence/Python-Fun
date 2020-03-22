@@ -35,7 +35,7 @@ class LinkedList:
       
   
   def search(self, value):
-      """ Search the linked list for a node with the requested value and return the node. """
+      # Search the linked list for a node with the requested value and return the node
       if self.head is None:
         return None
 
@@ -61,6 +61,7 @@ class LinkedList:
           node = node.next
   
   def pop(self):
+      #  Return the first node's value and remove it from the list.
       if self.head is None:
           return None
 
@@ -70,12 +71,24 @@ class LinkedList:
       return node.value
   
   def insert(self, value, pos):
-      """ Insert value at pos position in the list. If pos is larger than the
-          length of the list, append to the end of the list. """
-      
-      # TODO: Write function to insert here
-      
-      pass
+      # Insert value at pos position in the list. If pos is larger than the
+      # length of the list, append to the end of the list
+      if pos == 0:
+        self.prepend(value)
+        return
+
+      index = 0
+      node = self.head
+      while node.next and index <= pos:
+        if(pos-1) == index:
+          new_node = Node(value)
+          new_node.next = node.next
+          node.next = new_node
+          return
+
+        index += 1
+        node = node.next
+      else: self.append(value)
   
   def size(self):
       size = 0
@@ -133,3 +146,14 @@ assert linked_list.to_list() == [2, 1, 4]
 value = linked_list.pop()
 assert value == 2
 assert linked_list.head.value == 1
+
+# Test insert 
+linked_list.insert(5, 0)
+assert linked_list.to_list() == [5, 1, 4]
+linked_list.insert(2, 1)
+assert linked_list.to_list() == [5, 2, 1, 4]
+linked_list.insert(3, 6)
+assert linked_list.to_list() == [5, 2, 1, 4, 3]
+
+# Test size
+assert linked_list.size() == 5
