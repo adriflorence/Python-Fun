@@ -9,7 +9,7 @@ Implement a linked list class. The class should be able to:
 - Insert data at some position in the list
 - Return the size (length) of the linked list
 
-# TASK 2 - Max-Sum-Subarray
+# TASK 2 - Max Sum Subarray
 
 You have been given an array containg numbers. Find and return the largest sum in a contiguous subarray within the input array.
 
@@ -25,7 +25,20 @@ if n = 4, then output = [1, 4, 6, 4, 1].
 
 To know more about Pascal's triangle: https://www.mathsisfun.com/pascals-triangle.html
 
-# TASK 4 - 
+# TASK 4 - Balanced parantheses
+
+Take a string as an input and return `True` if it's parentheses are balanced or `False` if it is not. 
+
+# TASK 5 - Reverse Polish Notation
+
+Reverse Polish notation, also referred to as Polish postfix notation is a way of laying out operators and operands.
+When making mathematical expressions, we typically put arithmetic operators `(like +, -, *, and /)` between operands. 
+**Example**: `5 + 7 - 3 * 8`
+
+However, in Reverse Polish Notation, the operators come after the operands.
+**Example**: `3 1 + 4 *` would be evaluated as `(3 + 1) * 4 = 16`
+
+The goal of this exercise is to create a function that given a postfix expression as input, evaluate and return the correct final answer.
 
 # TASK 8 - Binary Tree Traversals
 Implement depth-first tree traversal with recursion for all three types:
@@ -47,4 +60,14 @@ You can assume that the string will have at least two letters, and the first two
 
 # TASK 11 - Pair-Sum-to-target
 
-Given an `input_list` and a target, return the indices of pair of integers in the list that sum to the target. The best solution takes O(n) time. You can assume that the list does not have any duplicates.
+Given an `input_list` and a `target`, return the indices of pair of integers in the list that sum to the target. The best solution takes O(n) time. You can assume that the list does not have any duplicates.
+
+**Exmaple:** `input_list = [1, 5, 9, 7]` and `target = 8`, the answer would be `[0, 3]`.
+
+# TASK 12 - First and Last Index
+
+Given a sorted array that may have duplicate values, use *binary search* to find the **first** and **last** indexes of a given value.
+
+For example, if you have the array `[0, 1, 2, 2, 3, 3, 3, 4, 5, 6]` and the given value is `3`, the answer will be `[4, 6]` (because the value `3` occurs first at index `4` and last at index `6` in the array).
+
+The expected complexity of the problem is $O(log(n))$.
