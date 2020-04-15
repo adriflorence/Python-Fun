@@ -34,7 +34,22 @@ def first_index(arr, number, start, end):
 
 
 def last_index(arr, number, start, end):
-    pass
+    if start > end:
+        return -1
+    
+    middle = start + (end - start) // 2
+    if number == arr[middle]:
+        # check if number appears later in the list
+        current_end_position = last_index(arr, number, middle + 1, end)
+        if current_end_position != -1:
+            end_pos = current_end_position
+        else: 
+            end_pos = middle
+        return end_pos
+    elif number > arr[middle]:
+        return last_index(arr, number, middle + 1, end)
+    else:
+        return last_index(arr, number, start, middle - 1)
 
 
 arr = [0, 1, 2, 2, 3, 3, 3, 4, 5, 6]
