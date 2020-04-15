@@ -51,7 +51,39 @@ def last_index(arr, number, start, end):
     else:
         return last_index(arr, number, start, middle - 1)
 
+def test_function(test_case):
+    input_list = test_case[0]
+    number = test_case[1]
+    solution = test_case[2]
+    output = first_and_last_index(input_list, number)
+    if output == solution:
+        print("Pass")
+    else:
+        print("Fail")
 
-arr = [0, 1, 2, 2, 3, 3, 3, 4, 5, 6]
-number = 3
-print(first_and_last_index(arr, number))
+
+# TEST CASES
+
+input_list_1 = [1]
+number_1 = 1
+solution_1 = [0, 0]
+test_case_1 = [input_list_1, number_1, solution_1]
+test_function(test_case_1)
+
+input_list_2 = [0, 1, 2, 3, 3, 3, 3, 4, 5, 6]
+number_2 = 3
+solution_2 = [3, 6]
+test_case_2 = [input_list_2, number_2, solution_2]
+test_function(test_case_2)
+
+input_list_3 = [0, 1, 2, 3, 4, 5]
+number_3 = 5
+solution_3 = [5, 5]
+test_case_3 = [input_list_3, number_3, solution_3]
+test_function(test_case_3)
+
+input_list_4 = [0, 1, 2, 3, 4, 5]
+number_4 = 5
+solution_4 = [5, 5]
+test_case_3 = [input_list_4, number_4, solution_4]
+test_function(test_case_3)
