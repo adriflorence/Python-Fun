@@ -12,10 +12,24 @@ class Trie(object):
         self.root = TrieNode()
   
     def add(self, word):
-        pass
+        current_node = self.root
+
+        for char in word:
+            if char not in current_node.children:
+                current_node.children[char] = TrieNode()
+            current_node = current_node.children[char]
+        current_node.is_word = True
+
   
     def exists(self, word):
-        pass
+        current_node = self.root
+
+        for char in word:
+            if char not in current_node.children:
+                return False
+            current_node = current_node.children[char]
+
+        return current_node.is_word
 
 
 word_list = ['apple', 'bear', 'goo', 'good', 'goodbye', 'goods', 'goodwill', 'gooses'  ,'zebra']
