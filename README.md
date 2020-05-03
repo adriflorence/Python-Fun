@@ -138,3 +138,15 @@ The LCS is 'BD', which has a length of 2 characters
 ```
 
 The recommended method for implementing an efficient LCS algorithm is using a matrix and dynamic programming. Dynamic programming is all about breaking a larger problem into a smaller set of subproblems, and building up a complete result without having to repeat any subproblems.
+
+# TASK 22 - Longest Palindromic Subsequence
+
+The task is to find the length of the Longest Palindromic Subsequence (LPS) given a string of characters. 
+
+```
+With an input string, ABBDBCACB
+The LPS is BCACB, which has length = 5
+```
+
+Focus on finding an optimal solution to the LPS task, using dynamic programming. The LPS algorithm depends on looking at one string and comparing letters to one another.
+For a string on length n characters, you can create an n x n matrix to store the solution to subproblems. In this case, the subproblem is the length of the longest palindromic subsequence, up to a certain point in the string (up to the end of a certain substring).
