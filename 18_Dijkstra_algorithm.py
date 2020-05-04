@@ -1,3 +1,8 @@
+class GraphEdge(object):
+    def __init__(self, node, distance):
+        self.node = node
+        self.distance = distance
+
 class GraphNode(object):
     def __init__(self, val):
         self.value = val
