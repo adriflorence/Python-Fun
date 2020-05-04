@@ -112,6 +112,10 @@ Create a Graph class in Python, then implement the `dfs_search` method to return
 
 # TASK 18 - Dijkstra's Shortest Path Algorithm
 
+Implement Dijkstra's Algorithm by building a graph to find the shortest distance from the "U" node to the "Y" node in the word "UDACITY" given in the test cases.
+
+Dijkstra's algorithm (or Dijkstra's Shortest Path First algorithm, SPF algorithm)[2] is an algorithm for finding the shortest paths between nodes in a graph, which may represent, for example, road networks. 
+
 # TASK 19 - Connecting Islands
 
 # TASK 20 - Knapsack
